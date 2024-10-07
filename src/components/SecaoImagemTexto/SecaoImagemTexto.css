@@ -1,0 +1,20 @@
+.secao-imagem-texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 20px 20px 20px;
+  }
+  
+  .imagem-secao {
+    width: 40%;
+    margin-right: 20px;
+    border-radius: 20px;
+  }
+  
+  .texto-secao {
+    width: 41%;
+    line-height: 35px;
+    font-size: 1.1em;
+    color: #646464;
+  }
+  

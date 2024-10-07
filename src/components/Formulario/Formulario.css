@@ -1,0 +1,336 @@
+/* Estilos gerais */
+.formulario-container {
+  width: 80%;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 10px gray;
+  padding-bottom: 20px;
+}
+
+.titulo-formulario {
+  background-color: #21A0D2;
+  color: #FFFFFF;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+}
+
+/* Estilização do formulário */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Inputs de dados pessoais */
+.dados-pessoais {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  gap: 20px 6%;
+  margin-top: 5%;
+}
+
+.input-formulario {
+  width: 40%;
+  height: 35px;
+  margin: 10px 0;
+  background-color: #F3F3F3;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+
+.input-formulario:focus {
+  background-color: #FFFFFF;
+  border-bottom: 2px solid #21A0D2;
+  outline: none;
+}
+
+
+/* Seção de seleção de produtos */
+.selecao-produtos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 83%;
+  margin-top: 5%;
+}
+
+.titulo-selecao-produtos {
+  color: #21A0D2;
+  margin: 0;
+}
+
+.botao-portfolio {
+  background-color: #21A0D2;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 110px;
+  height: 45px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.icone-expandir {
+  margin-left: 5px;
+}
+
+/* Títulos dos produtos */
+.titulos-produtos {
+  display: flex;
+  width: 83%;
+  justify-content: flex-start;
+  margin-top: 3%;
+  font-weight: bold;
+  gap: 80px;
+  color: #21A0D2;
+}
+
+.titulos-produtos div {
+  /* display: flex; */
+  justify-content: center;
+  width: auto;
+}
+
+.titulo-produto {
+  width: 25% !important;
+}
+
+.titulo-volume {
+  width: 16% !important;
+  margin: 0 0 0 8px;
+}
+
+.titulo-preco {
+  width: 16% !important;
+  margin: 0 0 0 8px;
+}
+
+.titulo-moeda {
+  width: 8% !important;
+  margin: 0 0 0 8px;
+}
+
+.titulo-acao {
+  width: 3%;
+}
+
+/* Linha de produtos */
+.linha-produto {
+  display: flex;
+  width: 83%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.input-produto,
+.input-volume,
+.input-preco,
+.input-moeda {
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  background-color: #F3F3F3;
+  padding: 5px 10px;
+}
+
+.input-produto {
+  width: 25%;
+  color: #757575;
+}
+
+.input-volume {
+  width: 15%;
+  height: 35px;
+}
+
+.input-preco {
+  width: 15%;
+  height: 35px;
+}
+
+.input-moeda {
+  width: 8%;
+  color: #757575;
+}
+
+.input-produto:focus,
+.input-moeda:focus {
+  background-color: #FFFFFF;
+  border-bottom: 2px solid #21A0D2;
+  outline: none;
+}
+
+.input-volume:focus,
+.input-preco:focus {
+  background-color: #FFFFFF;
+  border-bottom: 2px solid #21A0D2;
+  outline: none;
+}
+
+.botao-excluir {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  box-shadow: 0 0 5px gray;
+}
+
+/* Botão adicionar linha */
+.adicionar-linha {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 83%;
+  margin: 20px 0;
+}
+
+.botao-adicionar {
+  background-color: white;
+  color: #21A0D2;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 10%;
+  cursor: pointer;
+  font-size: 1.5em;
+  box-shadow: 0 0 5px gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-adicionar {
+  margin-left: 10px;
+  color: #21A0D2;
+}
+
+/* Checkbox de termos */
+.checkbox-termos {
+  width: 83%;
+  margin: 20px 0 0 -10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.checkbox-termos label {
+  font-size: 1em;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-termos input[type='checkbox'] {
+  margin-right: 10px;
+  width: 27px;
+  height: 27px;
+  border-radius: 10%;
+  box-shadow: 0 0 5px gray;
+  appearance: none;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-termos input[type='checkbox']::after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.checkbox-termos input[type='checkbox']:checked::after {
+  display: block;
+  left: 35%;
+  top: 7%;
+  width: 6px;
+  height: 16px;
+  border: solid #71F151;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Ajuste para evitar que o fundo fique verde */
+.checkbox-termos input[type='checkbox']:checked {
+  background-color: white;
+}
+
+.termos-link {
+  color: #21A0D2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Botão enviar */
+.botao-enviar {
+  background-color: #21A0D2;
+  width: 110px;
+  height: 45px;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 30px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .input-formulario {
+    width: 80%;
+  }
+
+  .dados-pessoais {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-produto,
+  .input-volume,
+  .input-preco,
+  .input-moeda {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .linha-produto {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botao-excluir {
+    width: auto;
+    margin-top: 10px;
+  }
+
+  .botao-adicionar {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .checkbox-termos {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .titulos-produtos {
+    display: none;
+  }
+}
+
+
