@@ -1,0 +1,38 @@
+/* src/components/Obrigado/Obrigado.css */
+
+.obrigado-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .obrigado-content {
+    text-align: center;
+    margin-top: 20%;
+  }
+  
+  .obrigado-content h1 {
+    font-size: 3em;
+    color: #21A0D2;
+  }
+  
+  .obrigado-content p {
+    font-size: 1.2em;
+    margin: 20px 0;
+  }
+  
+  .botao-voltar {
+    background-color: #21A0D2;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 20px 0;
+  }
+  
+  .botao-voltar:hover {
+    background-color: #1a7ca2;
+  }
+  

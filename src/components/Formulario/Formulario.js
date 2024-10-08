@@ -1,9 +1,15 @@
+// src/components/Formulario/Formulario.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Formulario.css'; // Atualize o caminho se necessário
+import './Formulario.css';
 import PortfolioPopup from '../PortfolioPopup/PortfolioPopup';
+import { useNavigate } from 'react-router-dom';
+
 
 function Formulario() {
+  const navigate = useNavigate();
+
+
   const [linhasProdutos, setLinhasProdutos] = useState([
     { produto: '', volume: '', preco: '', moeda: '', volumeMinimo: '', precoMinimo: '' },
   ]);
@@ -132,7 +138,11 @@ function Formulario() {
           },
         }
       );
-      alert('Formulário enviado com sucesso!');
+
+      // Redirecionar para a página 'Obrigado'
+      navigate('/obrigado');
+
+
       // Limpar o formulário se necessário
       setFormData({
         nome: '',
@@ -174,41 +184,52 @@ function Formulario() {
       <h2 className="titulo-formulario">Formulário de Produtos</h2>
       <form onSubmit={handleSubmit} className="formulario">
         <div className="dados-pessoais">
-          <input
-            type="text"
-            name="nome"
-            placeholder="Nome"
-            className="input-formulario"
-            value={formData.nome}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="input-formulario"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="text"
-            name="empresa"
-            placeholder="Empresa"
-            className="input-formulario"
-            value={formData.empresa}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="tel"
-            name="telefone"
-            placeholder="Telefone"
-            className="input-formulario"
-            value={formData.telefone}
-            onChange={handleInputChange}
-          />
+          <div className="input-group">
+            <input
+              type="text"
+              name="nome"
+              placeholder="Nome"
+              className="input-formulario"
+              value={formData.nome}
+              onChange={handleInputChange}
+              required
+            />
+            <span className="asterisk">*</span>
+          </div>
+          <div className="input-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="input-formulario"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+            <span className="asterisk">*</span>
+          </div>
+          <div className="input-group">
+            <input
+              type="text"
+              name="empresa"
+              placeholder="Empresa"
+              className="input-formulario"
+              value={formData.empresa}
+              onChange={handleInputChange}
+              required
+            />
+            <span className="asterisk">*</span>
+          </div>
+          <div className="input-group">
+            <input
+              type="tel"
+              name="telefone"
+              placeholder="Telefone"
+              className="input-formulario"
+              value={formData.telefone}
+              onChange={handleInputChange}
+            />
+          </div>
         </div>
 
         <div className="selecao-produtos-header">
@@ -221,10 +242,10 @@ function Formulario() {
         {popupAberto && <PortfolioPopup fecharPopup={fecharPopup} />}
 
         <div className="titulos-produtos">
-          <div className="titulo-produto">Produto</div>
-          <div className="titulo-volume">Volume</div>
-          <div className="titulo-preco">Preço</div>
-          <div className="titulo-moeda">Moeda</div>
+          <div className="titulo-produto">Produto<span className="asterisk">*</span></div>
+          <div className="titulo-volume">Volume<span className="asterisk">*</span></div>
+          <div className="titulo-preco">Preço<span className="asterisk">*</span></div>
+          <div className="titulo-moeda">Moeda<span className="asterisk">*</span></div>
           <div className="titulo-acao"></div>
         </div>
 
@@ -260,6 +281,7 @@ function Formulario() {
               value={linha.preco}
               onChange={(e) => handleLinhaChange(index, e)}
               min={linha.precoMinimo || 0}
+              step="any"
               required
             />
             <select
@@ -287,7 +309,7 @@ function Formulario() {
           <button type="button" className="botao-adicionar" onClick={adicionarLinha}>
             +
           </button>
-          <span className="texto-adicionar">Clique para adicionar linha de produtos</span>
+          <span className="texto-adicionar">Clique para adicionar linha de produtos <span className="asterisk">*</span></span>
         </div>
 
         <div className="checkbox-termos">
@@ -302,7 +324,7 @@ function Formulario() {
             <span className="termos-link" onClick={irParaRegras}>
               termos e regras
             </span>{' '}
-            mencionados acima
+            mencionados acima <span className="asterisk">*</span>
           </label>
         </div>
 
